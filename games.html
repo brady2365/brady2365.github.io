@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Classroom - Home</title>
+    <link rel="icon" href="https://www.gstatic.com/classroom/favicon.png">
+
+    <style>
+        :root {
+            --bg: #0d1b0f;
+            --card-bg: #123d18;
+            --gold: #d4b300;
+            --soft: #e8e3a0;
+            --muted: #5a5a5a;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--soft);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            padding-top: 70px;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--card-bg);
+            border-bottom: 3px solid var(--gold);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            z-index: 999;
+            box-shadow: 0 0 15px rgba(212,179,0,0.12);
+        }
+
+        .logo {
+            color: var(--gold);
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .nav-search {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            min-width: 120px;
+        }
+
+        .nav-search input {
+            padding: 8px 12px;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            outline: none;
+            border: 2px solid var(--gold);
+            background-color: #0f3114;
+            color: var(--soft);
+        }
+
+        .nav-search input::placeholder {
+            color: var(--gold);
+            opacity: 0.9;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 12px;
+            flex-shrink: 0;
+            margin-right: 40px;
+        }
+
+        .nav-links a {
+            color: var(--soft);
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+            text-shadow: 0 0 8px rgba(212,179,0,0.25);
+        }
+
+        /* HEADINGS */
+        .page-head {
+            text-align: center;
+            margin: 20px 0 10px;
+        }
+
+        h1, h2 {
+            color: var(--gold);
+            margin: 0 0 10px;
+        }
+
+        .separator {
+            width: 90%;
+            height: 3px;
+            background: var(--muted);
+            border-radius: 3px;
+            margin: 20px auto;
+            opacity: 0.7;
+        }
+
+        /* GAME GRID */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            justify-items: center;
+            margin: 20px 0;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .game-card {
+            position: relative;
+            background: var(--card-bg);
+            padding: 14px;
+            border-radius: 14px;
+            width: 100%;
+            max-width: 420px;
+            border: 3px solid var(--gold);
+            box-shadow: 0 0 18px rgba(212,179,0,0.12);
+            transition: transform 0.15s ease, box-shadow 0.15s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        }
+
+        .game-card h3 {
+            margin: 0 0 8px;
+            text-align: center;
+            color: var(--gold);
+        }
+
+        iframe.game-frame {
+            width: 100%;
+            height: 350px;
+            border: none;
+            border-radius: 10px;
+            display: block;
+            background: #000;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            right: 16px;
+            bottom: 16px;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 2;
+            transition: background 0.18s;
+        }
+
+        .overlay:hover {
+            background: rgba(0,0,0,0.55);
+        }
+
+        .fullscreen-button {
+            margin-top: 10px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            background: var(--gold);
+            color: var(--card-bg);
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .fullscreen-button:hover {
+            background: #e0c233;
+        }
+
+        /* GOOGLE FORM */
+        .request-wrap {
+            display: flex;
+            justify-content: center;
+            margin: 18px 0 60px 0;
+        }
+
+        .request-wrap iframe {
+            width: 40%;
+            max-width: 560px;
+            min-width: 260px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 1000px) {
+            .game-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .nav-search input {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .game-grid {
+                grid-template-columns: 1fr;
+            }
+            iframe.game-frame {
+                height: 300px;
+            }
+            .nav-search {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin: 5px 0;
+            }
+            .nav-links {
+                justify-content: flex-start;
+                gap: 8px;
+                margin-left: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">Classroom Hub</div>
+
+        <div class="nav-search">
+            <input type="text" id="searchInput" placeholder="Search games..." oninput="searchGames()">
+        </div>
+
+        <div class="nav-links">
+            <a href="#games">Games</a>
+            <a href="#request">Request</a>
+        </div>
+    </div>
+
+    <!-- Page Head -->
+    <div class="page-head">
+        <h1 id="games">Game Library</h1>
+    </div>
+
+    <div class="separator"></div>
+
+    <!-- Game Grid -->
+    <div id="gameContainer" class="game-grid"></div>
+
+    <div class="separator"></div>
+
+    <h2 id="request" style="text-align:center; margin-top:40px;">Any requests for games to add?</h2>
+
+    <div class="request-wrap">
+        <iframe src="https://forms.gle/krxNEueW7HhYcz2T6?embedded=true" width="40%" height="250" frameborder="0"></iframe>
+    </div>
+
+    <h1>!Disclaimer!</h1>
+    <p>This website is for educational and entertainment purposes only. 
+        Students are responsible for following their school’s rules and policies 
+        regarding device and website use during school hours.
+    </p>
+
+    <script>
+        const games = [
+            { title: "Retro Bowl", id: "game1", url: "https://class1811.github.io/g5/class-400/" },
+            { title: "Slope", id: "game2", url: "https://class1811.github.io/g5/class-450/" },
+            { title: "Stickman Hook Game", id: "game3", url: "https://class1811.github.io/g5/class-406/" },
+            { title: "Cookie Clicker", id: "game4", url: "https://class1811.github.io/g5/class-448/" },
+            { title: "Monkey Mart", id: "game5", url: "https://class1811.github.io/g77/class-829/" },
+            { title: "Basket Random", id: "game6", url: "https://class1811.github.io/g26/class-436/" },
+            { title: "OvO", id: "game7", url: "https://class1811.github.io/g5/class-456/" },
+            { title: "Arc", id: "game8", url: "https://ragdollarchers.github.io/embed/ragdoll-archers.html" },
+            { title: "Escape the Prison Game", id: "game9", url: "https://class1811.github.io/g97/class-780/" },
+            { title: "Bitlife", id: "game10", url: "https://class1811.github.io/g5/class-441/" },
+            { title: "Crossy Road", id: "game11", url: "https://class1811.github.io/g20/class-402/" },
+            { title: "Paper.io", id: "game12", url: "https://class1811.github.io/g/class-505/" },
+            { title: "Snow Rider", id: "game13", url: "https://itsvijaysingh.github.io/Snow-Rider3D/" },
+            { title: "Drift Boss", id: "game14", url: "https://class1811.github.io/g5/class-472/" },
+            { title: "Devil Level", id: "game15", url: "https://class1811.github.io/g22/class-356/" },
+            { title: "Escape Road 1", id: "game16", url: "https://azgames.io/game/escape-road/" },
+            { title: "Escape Road 2", id: "game17", url: "https://escaperoad.io/escape-road-2.embed" },
+            { title: "Crazy Cattle 3d", id: "game18", url: "https://crazycattle3d.github.io/" },
+            { title: "Race Royale", id: "game19", url: "https://www.gamegab.com/content/games/race-survival-arena-king/" },
+            { title: "Steal a Brainrot", id: "game20", url: "https://st.8games.net/9/8g/igra-ukradi-brejnrot-original-3d/" },
+            { title: "Tiny Fishing", id: "game21", url: "https://class1811.github.io/g5/class-451/" },
+            { title: "Football Bros", id: "game22", url: "https://gnhustgames.github.io/football-bros/" },
+            { title: "Spacebar Clicker", id: "game23", url: "https://sciencemathedu.github.io/space/" },
+            { title: "1v1.lol", id: "game24", url: "https://1v1-lol-unblocked.gitlab.io/file/" },
+            { title: "Cluster Rush", id: "game25", url: "https://htmlxm.github.io/h8/cluster-rush/" },
+            { title: "Vex 7", id: "game26", url: "https://vex7online.github.io/file/" },
+            { title: "Highway Traffic", id: "game27", url: "https://class1811.github.io/g97/class-522/" },
+            { title: "Super Mario Bros", id: "game28", url: "https://class1811.github.io/g/class-826/" },
+            { title: "Snow Battle Io", id: "game29", url: "https://sciencemathlearning.github.io/snowbattle/" },
+            { title: "Gladihopper", id: "game30", url: "https://gnhustgames.github.io/gladihoppers/" },
+            { title: "Youtube", id: "game31", url: "https://613tube.com/" },
+            { title: "Clash Royale", id: "game32", url: "https://www.fanfreegames.com/game.php?id_juego=20079&id_dominio=2&code=b66vv69dv2v8v2e81v48v4v6cv4v1v69&ads=1" },
+            { title: "Fortnite", id: "game33", url: "https://www.fandejuegos.com/game.php?id_juego=13589&id_dominio=1&code=c98b1cvv77vv4v9vdd4ve224v148e88c&ads=1" },
+            { title: "Subway Surfers", id: "game34", url: "https://class1811.github.io/g26/class-444" },
+            { title: "Drift Hunters", id: "game35", url: "https://drift-hunters.co/drift-hunters-games.embed" },
+            { title: "UltraKill", id: "game36", url: "https://www.gamenora.com/full/ultrakill-prelude/" },
+            { title: "The Amazing Spiderman", id: "game37", url: "https://www.gameflare.com/embed/the-amazing-spider-man/" },
+            { title: "Puppet Hockey", id: "game38", url: "https://www.hoodamath.com/mobile/games/puppet-hockey/game.html?nocheckorient=1" },
+            { title: "Slither.io", id: "game39", url: "https://gulper.io/" },
+            { title: "Retro Bowl College", id: "game40", url: "https://coolubg2.github.io/coolubg-list/retro-bowl-college/game.html" },
+            { title: "Geometry Dash Lite", id: "game41", url: "https://geometrylitegame.org/game/geometry-dash-lite/"},
+            { title: "Wrestle Bros", id: "game42", url: "https://wrestlebros.io/"},
+            { title: "Baseball Bros", id: "game43", url: "https://baseball-game.io/baseball-bros.embed"},
+            { title: "Soccer Bros", id: "game44", url: "https://soccerbros.gg/?gd_sdk_referrer_url=https://soccerbros.github.io/"},
+            { title: "Basket Bros", id: "game45", url: "https://basketbros-unblocked.github.io/a7/basket-bros/"},
+            { title: "Flappy Bird", id: "game46", url: "https://jxmked.github.io/Flappybird/"},
+            { title: "Friday Night Funkin", id: "game47", url: "https://fridaynight-funkin.github.io/f88/friday-night-funkin/"},
+            { title: "Super Hot", id: "game48", url: "https://scrap-metal.github.io/s8/super-hot/"},
+            { title: "Tiktok", id: "game49", url: "https://storage.cookieduck.com/uv/load.html?v=aHR0cHM6Ly93d3cudGlrdG9rLmNvbS9mb3J5b3U="},
+            { title: "Doom", id: "game50", url: "https://freebie.games/games/doom/play/"},
+            { title: "Baksetball Legends 2020", id: "game51", url: "https://basketball-legends-online.github.io/file/"},
+            { title: "Slice Master", id: "game52", url: "https://bitlifeonline.github.io/slice-master/"},
+        ];
+
+        const container = document.getElementById('gameContainer');
+
+        function escapeHtml(str) {
+            return str
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+
+        function createCardHTML(g) {
+            return `
+                <div class="game-card" data-title="${escapeHtml(g.title)}">
+                    <h3>${escapeHtml(g.title)}</h3>
+                    <iframe id="${g.id}" class="game-frame" allowfullscreen></iframe>
+                    <div class="overlay" onclick="loadGame('${g.id}','${g.url}', this)">Play</div>
+                    <button class="fullscreen-button" onclick="fullscreenFrame('${g.id}')">Fullscreen</button>
+                </div>
+            `;
+        }
+
+        games.forEach(g =>
+            container.insertAdjacentHTML('beforeend', createCardHTML(g))
+        );
+
+        function loadGame(frameId, url, overlayEl) {
+            const iframe = document.getElementById(frameId);
+            if (!iframe) return;
+
+            iframe.src = url;
+            if (overlayEl) overlayEl.style.display = 'none';
+        }
+
+        function fullscreenFrame(frameId) {
+            const iframe = document.getElementById(frameId);
+            if (!iframe) return;
+
+            try {
+                iframe.requestFullscreen?.() ||
+                iframe.webkitRequestFullscreen?.() ||
+                iframe.msRequestFullscreen?.();
+            } catch (e) {
+                console.warn("Fullscreen failed", e);
+            }
+        }
+
+        function searchGames() {
+            const q = document.getElementById('searchInput').value.trim().toLowerCase();
+
+            document.querySelectorAll('.game-card').forEach(card => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                card.style.display = title.includes(q) ? 'block' : 'none';
+            });
+        }
+
+        document.getElementById('searchInput').addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                this.value = '';
+                searchGames();
+            }
+        });
+    </script>
+
+</body>
+</html>
