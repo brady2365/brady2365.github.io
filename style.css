@@ -23,36 +23,37 @@ html, body {
     background: var(--card-bg);
     border-bottom: 3px solid var(--accent);
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* logo left, links & search right */
     padding: 10px 20px;
     z-index: 999;
     box-shadow: 0 0 15px rgba(0,255,0,0.12);
-}
-
-.logo {
-    color: var(--accent);
-    font-size: 20px;
-    font-weight: 700;
+    flex-wrap: wrap; /* allows responsiveness */
 }
 
 .nav-links {
     display: flex;
     gap: 12px;
+}
+
+/* for games page only, search input on right */
+.nav-search {
+    margin-left: 20px;
     flex-shrink: 0;
-    margin-right: 40px;
 }
 
-.nav-links a {
+.nav-search input {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 2px solid var(--accent);
+    background-color: #0a0a0a;
     color: var(--soft);
-    text-decoration: none;
-    font-size: 15px;
+    outline: none;
 }
 
-.nav-links a:hover {
-    color: #fff;
-    text-shadow: 0 0 8px rgba(0,255,0,0.25);
+.nav-search input::placeholder {
+    color: var(--accent);
+    opacity: 0.8;
 }
 
 /* GAME GRID */
