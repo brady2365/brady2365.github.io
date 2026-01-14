@@ -1,11 +1,10 @@
 const container = document.getElementById('gameContainer');
 
 function escapeHtml(str) {
-    return str
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
+    return str.replace(/&/g, '&amp;')
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;')
+              .replace(/"/g, '&quot;');
 }
 
 function createCardHTML(g) {
@@ -19,14 +18,11 @@ function createCardHTML(g) {
     `;
 }
 
-games.forEach(g =>
-    container.insertAdjacentHTML('beforeend', createCardHTML(g))
-);
+games.forEach(g => container.insertAdjacentHTML('beforeend', createCardHTML(g)));
 
 function loadGame(frameId, url, overlayEl) {
     const iframe = document.getElementById(frameId);
     if (!iframe) return;
-
     iframe.src = url;
     if (overlayEl) overlayEl.style.display = 'none';
 }
@@ -34,7 +30,6 @@ function loadGame(frameId, url, overlayEl) {
 function fullscreenFrame(frameId) {
     const iframe = document.getElementById(frameId);
     if (!iframe) return;
-
     try {
         iframe.requestFullscreen?.() ||
         iframe.webkitRequestFullscreen?.() ||
@@ -46,14 +41,13 @@ function fullscreenFrame(frameId) {
 
 function searchGames() {
     const q = document.getElementById('searchInput').value.trim().toLowerCase();
-
     document.querySelectorAll('.game-card').forEach(card => {
         const title = card.getAttribute('data-title').toLowerCase();
         card.style.display = title.includes(q) ? 'block' : 'none';
     });
 }
 
-document.getElementById('searchInput').addEventListener('keydown', function(e) {
+document.getElementById('searchInput')?.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         this.value = '';
         searchGames();
