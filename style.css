@@ -1,7 +1,7 @@
 :root {
     --bg: #0a0a0a;
     --card-bg: #1a1a2e;
-    --accent: #00ffff;
+    --accent: #00ff00;
     --soft: #c0c0ff;
     --muted: #555555;
 }
@@ -75,7 +75,7 @@ body {
 }
 
 h1, h2 {
-    color: lime;
+    color: var(--accent);
     margin: 0 0 10px;
 }
 
