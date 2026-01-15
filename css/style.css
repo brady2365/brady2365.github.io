@@ -1,91 +1,153 @@
-:root {
-    --bg: #000000;
-    --card-bg: #123d18;
-    --gold: #d4b300;
-    --soft: #e8e3a0;
-    --muted: #5a5a5a;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: var(--bg);
-    color: var(--soft);
+/* ===== GLOBAL THEME ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 body {
-    padding-top: 70px;
+  background: black;
+  color: lime;
 }
 
-/* NAVBAR */
-.navbar { ... }
-.logo { ... }
-.nav-search { ... }
+/* Remove link underlines everywhere */
+a {
+  text-decoration: none;
+  color: lime;
+}
+
+a:hover {
+  color: #b6ff00;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 30px;
+  border-bottom: 2px solid lime;
+  box-shadow: 0 0 15px rgba(0,255,0,0.6);
+}
+
 .nav-links {
-    color:lime;
+  display: flex;
+  gap: 30px;
 }
 
-/* GAME GRID */
+.nav-links a {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px lime;
+}
+
+/* ===== TITLES ===== */
+h1, h2, h3, h4 {
+  text-align: center;
+  margin: 25px 0;
+  text-shadow: 0 0 12px lime;
+}
+
+/* ===== COUNTDOWN TIMER ===== */
+#timer {
+  font-size: 60px;
+  text-align: center;
+  margin-top: 20px;
+  text-shadow:
+    0 0 10px lime,
+    0 0 20px lime,
+    0 0 40px #00ff00;
+}
+
+/* ===== DIVIDER LINE ===== */
+.divider {
+  height: 2px;
+  width: 100%;
+  background: lime;
+  box-shadow: 0 0 10px lime;
+  margin: 30px 0;
+}
+
+/* ===== GAME GRID ===== */
 .game-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-    gap: 30px;                             /* space between cards */
-    justify-items: center;                 /* centers cards in their column */
-    margin: 20px 0;
-    padding: 0 20px;
-    box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
 }
 
+/* ===== GAME CARD ===== */
 .game-card {
-    text-align: center;
+  border: 2px solid lime;
+  border-radius: 14px;
+  overflow: hidden;
+  background: black;
+  box-shadow: 0 0 20px rgba(0,255,0,0.6);
 }
 
-.game-box {
-    border: 3px solid var(--gold);
-    border-radius: 12px;
-    overflow: hidden;
-    background: var(--card-bg);
-    width: 240px;      /* bigger width */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    transition: transform 0.15s ease, box-shadow 0.15s;
+/* Iframe */
+.game-frame {
+  aspect-ratio: 16 / 9;
+  width: 100%;
 }
 
-
-.game-box:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+.game-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
-.game-image {
-    width: 100%;
-    height: auto;
-    display: block;
+/* Bottom bar */
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-top: 2px solid lime;
+  text-shadow: 0 0 8px lime;
 }
 
-.game-title {
-    padding: 8px 0;
-    background: var(--card-bg);
-    color: var(--gold);
-    font-weight: bold;
-    font-size: 16px;
+/* Button */
+.fullscreen-btn {
+  background: lime;
+  color: black;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px lime;
 }
 
-.game-card:hover { ... }
-
-/* REQUEST FORM */
-.request-wrap { ... }
-
-/* MEDIA QUERIES */
-@media (max-width: 1000px) {
-    .game-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 per row on medium screens */
-    }
+.fullscreen-btn:hover {
+  background: #b6ff00;
+  box-shadow: 0 0 20px #b6ff00;
 }
 
-@media (max-width: 650px) {
-    .game-grid {
-        grid-template-columns: 1fr; /* 1 per row on mobile */
-    }
+/* ===== FOOTER ===== */
+footer {
+  margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid lime;
+  background: #050505;
+  color: lime;
+  text-shadow: 0 0 6px lime;
 }
 
+/* Responsive */
+@media (max-width: 900px) {
+  .game-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+}
