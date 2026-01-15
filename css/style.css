@@ -27,6 +27,13 @@ body {
 /* GAME GRID */
 .game-grid { ... }
 .game-card { ... }
+.game-image {
+    width: 200px;   /* controls width */
+    height: 120px;  /* controls height */
+    object-fit: cover; /* keeps image proportioned nicely */
+    border-radius: 10px;
+}
+
 .game-card:hover { ... }
 
 /* REQUEST FORM */
