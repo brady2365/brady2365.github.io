@@ -43,11 +43,37 @@ a:hover {
   text-shadow: 0 0 8px lime;
 }
 
+
 /* ===== TITLES ===== */
 h1, h2, h3, h4 {
   text-align: center;
   margin: 25px 0;
   text-shadow: 0 0 12px lime;
+}
+
+/* ===== SEARCH BAR ===== */
+.nav-search input {
+  padding: 6px 15px;            /* space inside input */
+  border: 2px solid lime;       /* neon border to match theme */
+  border-radius: 20px;          /* pill-shaped input */
+  background-color: #1a1a1a;   /* dark input background */
+  color: lime;                  /* neon text color */
+  font-weight: bold;
+  font-size: 16px;
+  outline: none;                /* remove default focus outline */
+  transition: all 0.2s;
+  width: 180px;                 /* adjust width */
+  text-shadow: 0 0 5px lime;   /* subtle glow on text */
+}
+
+.nav-search input::placeholder {
+  color: #a0ffa0;               /* softer neon placeholder */
+}
+
+.nav-search input:focus {
+  border-color: #fff;           /* glow effect on focus */
+  box-shadow: 0 0 10px lime;   /* neon glow */
+  background-color: #111;       /* slightly darker on focus */
 }
 
 /* ===== COUNTDOWN TIMER ===== */
