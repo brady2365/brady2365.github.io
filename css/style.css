@@ -1,0 +1,37 @@
+:root {
+    --bg: #0d1b0f;
+    --card-bg: #123d18;
+    --gold: #d4b300;
+    --soft: #e8e3a0;
+    --muted: #5a5a5a;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--soft);
+}
+
+body {
+    padding-top: 70px;
+}
+
+/* NAVBAR */
+.navbar { ... }
+.logo { ... }
+.nav-search { ... }
+.nav-links { ... }
+
+/* GAME GRID */
+.game-grid { ... }
+.game-card { ... }
+.game-card:hover { ... }
+
+/* REQUEST FORM */
+.request-wrap { ... }
+
+/* MEDIA QUERIES */
+@media (max-width: 1000px) { ... }
+@media (max-width: 650px) { ... }
