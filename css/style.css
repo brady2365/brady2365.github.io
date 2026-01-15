@@ -44,6 +44,10 @@ a:hover {
   margin-right: auto;
 }
 
+.navbar-wrap {
+  padding:14px;
+}
+
 /* Logo */
 .logo {
   font-size: 24px;
