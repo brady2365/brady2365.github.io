@@ -41,7 +41,7 @@ html, body {
 .nav-links {
     display: flex;
     gap: 12px;
-    margin-right:10px;
+    margin-right:50px;
 }
 
 /* for games page only, search input on right */
