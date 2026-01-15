@@ -25,19 +25,37 @@ body {
 .nav-links { ... }
 
 /* GAME GRID */
-.game-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 per row */
-    gap: 20px;
-    justify-items: center;
+.game-card {
+    text-align: center;
 }
 
-.game-card { ... }
+.game-box {
+    border: 3px solid var(--gold);  /* the box border */
+    border-radius: 12px;
+    overflow: hidden;               /* so image corners are rounded with the box */
+    background: var(--card-bg);
+    width: 200px;                   /* fixed width for uniform cards */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.15s ease, box-shadow 0.15s;
+}
+
+.game-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
 .game-image {
-    width: 200px;   /* controls width */
-    height: auto;  /* controls height */
-    object-fit: cover; /* keeps image proportioned nicely */
-    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.game-title {
+    padding: 8px 0;
+    background: var(--card-bg);
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .game-card:hover { ... }
