@@ -94,12 +94,12 @@ h1, h2, h3, h4 {
 
 /* make the image box taller without squishing */
 .game-box img.game-image {
-  width: 100%;
-  height: auto;          /* keeps natural aspect ratio */
-  max-height: 200px;     /* limits max height so cards don't explode */
-  object-fit: cover;     /* crops nicely if needed */
+  width: 100%;       /* full width */
+  height: auto;      /* auto height so aspect ratio is preserved */
+  object-fit: contain;  /* show entire image */
   display: block;
   border-bottom: 2px solid lime;
+  margin: 0 auto;    /* center image if narrower than card */
 }
 
 /* title box under the image */
