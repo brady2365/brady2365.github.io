@@ -88,26 +88,33 @@ h1, h2, h3, h4 {
   box-shadow: 0 0 15px rgba(0,255,0,0.6);
   font-weight: bold;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* make the image box taller without squishing */
+.game-box img.game-image {
+  width: 100%;
+  height: auto;          /* keeps natural aspect ratio */
+  max-height: 200px;     /* limits max height so cards don't explode */
+  object-fit: cover;     /* crops nicely if needed */
+  display: block;
+  border-bottom: 2px solid lime;
+}
+
+/* title box under the image */
+.game-title {
+  padding: 12px 10px;
+  background: black;
+  border-top: 2px solid lime;
+  text-shadow: 0 0 8px lime;
+  font-size: 18px;
 }
 
 .game-card a.game-link {
   display: block;
   color: lime;
   text-decoration: none;
-}
-
-.game-box img.game-image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  display: block;
-  border-bottom: 2px solid lime;
-}
-
-.game-title {
-  padding: 10px;
-  background: black;
-  border-top: 2px solid lime;
-  text-shadow: 0 0 8px lime;
 }
 
 @media (max-width: 1000px) {
