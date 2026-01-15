@@ -1,5 +1,5 @@
 :root {
-    --bg: #0d1b0f;
+    --bg: #000000;
     --card-bg: #123d18;
     --gold: #d4b300;
     --soft: #e8e3a0;
@@ -40,14 +40,15 @@ body {
 }
 
 .game-box {
-    border: 3px solid var(--gold);  /* the box border */
+    border: 3px solid var(--gold);
     border-radius: 12px;
-    overflow: hidden;               /* so image corners are rounded with the box */
+    overflow: hidden;
     background: var(--card-bg);
-    width: 200px;                   /* fixed width for uniform cards */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    width: 240px;      /* bigger width */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     transition: transform 0.15s ease, box-shadow 0.15s;
 }
+
 
 .game-box:hover {
     transform: translateY(-4px);
@@ -74,5 +75,15 @@ body {
 .request-wrap { ... }
 
 /* MEDIA QUERIES */
-@media (max-width: 1000px) { ... }
-@media (max-width: 650px) { ... }
+@media (max-width: 1000px) {
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row on medium screens */
+    }
+}
+
+@media (max-width: 650px) {
+    .game-grid {
+        grid-template-columns: 1fr; /* 1 per row on mobile */
+    }
+}
+
