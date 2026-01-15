@@ -32,7 +32,7 @@ html, body {
 }
 
 .my-img {
-    width: 150px;  /* change size */
+    width: 50px;  /* change size */
     height: auto;  /* keeps aspect ratio */
     display: block;
     margin: 0 auto; /* centers the image */
