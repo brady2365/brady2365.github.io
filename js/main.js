@@ -18,8 +18,10 @@ function createCardHTML(g) {
     return `
         <div class="game-card" data-title="${escapeHtml(g.title)}">
             <a href="${g.url}">
-                <img class="game-image" src="${g.image}" alt="${escapeHtml(g.title)}">
-                <h3>${escapeHtml(g.title)}</h3>
+                <div class="game-box">
+                    <img class="game-image" src="${g.image}" alt="${escapeHtml(g.title)}">
+                    <div class="game-title">${escapeHtml(g.title)}</div>
+                </div>
             </a>
         </div>
     `;
