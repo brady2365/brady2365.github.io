@@ -24,13 +24,26 @@ a:hover {
 /* ===== NAVBAR ===== */
 .navbar {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;        /* align items to top */
+  justify-content: space-between; /* logo left, links right */
   padding: 16px 30px;
   border-bottom: 2px solid lime;
-  box-shadow: 0 0 15px rgba(0,255,0,0.6);
+  border-radius: 10px;            /* rounded edges */
+  box-shadow: 0 0 20px rgba(0,255,0,0.6); /* neon glow */
+  position: relative;             /* needed for centered search bar */
+  background-color: #0f0f0f;
 }
 
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: lime;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 0 0 10px lime;
+}
+
+/* Links */
 .nav-links {
   display: flex;
   gap: 30px;
@@ -43,37 +56,50 @@ a:hover {
   text-shadow: 0 0 8px lime;
 }
 
+.nav-links a:hover {
+  color: #fff;
+  transform: scale(1.1);
+  transition: transform 0.2s, color 0.2s;
+}
+
+/* ===== SEARCH BAR ===== */
+.nav-search {
+  position: absolute;             /* float in middle */
+  left: 50%;                      /* center horizontally */
+  transform: translateX(-50%);
+  top: 50%;                       /* vertically center (optional) */
+  transform: translate(-50%, -0%); /* tweak vertical position if needed */
+}
+
+.nav-search input {
+  padding: 6px 15px;            
+  border: 2px solid lime;       /* neon border */
+  border-radius: 20px;          /* pill shape */
+  background-color: #1a1a1a;   /* dark input background */
+  color: lime;                  
+  font-weight: bold;
+  font-size: 16px;
+  outline: none;                
+  transition: all 0.2s;
+  width: 180px;                 
+  text-shadow: 0 0 5px lime;   
+}
+
+.nav-search input::placeholder {
+  color: #a0ffa0;               
+}
+
+.nav-search input:focus {
+  border-color: #fff;           
+  box-shadow: 0 0 12px lime;   /* bigger glow when focused */
+  background-color: #111;       
+}
 
 /* ===== TITLES ===== */
 h1, h2, h3, h4 {
   text-align: center;
   margin: 25px 0;
   text-shadow: 0 0 12px lime;
-}
-
-/* ===== SEARCH BAR ===== */
-.nav-search input {
-  padding: 6px 15px;            /* space inside input */
-  border: 2px solid lime;       /* neon border to match theme */
-  border-radius: 20px;          /* pill-shaped input */
-  background-color: #1a1a1a;   /* dark input background */
-  color: lime;                  /* neon text color */
-  font-weight: bold;
-  font-size: 16px;
-  outline: none;                /* remove default focus outline */
-  transition: all 0.2s;
-  width: 180px;                 /* adjust width */
-  text-shadow: 0 0 5px lime;   /* subtle glow on text */
-}
-
-.nav-search input::placeholder {
-  color: #a0ffa0;               /* softer neon placeholder */
-}
-
-.nav-search input:focus {
-  border-color: #fff;           /* glow effect on focus */
-  box-shadow: 0 0 10px lime;   /* neon glow */
-  background-color: #111;       /* slightly darker on focus */
 }
 
 /* ===== COUNTDOWN TIMER ===== */
@@ -120,12 +146,12 @@ h1, h2, h3, h4 {
 
 /* make the image box taller without squishing */
 .game-box img.game-image {
-  width: 100%;       /* full width */
-  height: auto;      /* auto height so aspect ratio is preserved */
-  object-fit: contain;  /* show entire image */
+  width: 100%;       
+  height: auto;      
+  object-fit: contain;  
   display: block;
   border-bottom: 2px solid lime;
-  margin: 0 auto;    /* center image if narrower than card */
+  margin: 0 auto;    
 }
 
 /* title box under the image */
@@ -143,6 +169,7 @@ h1, h2, h3, h4 {
   text-decoration: none;
 }
 
+/* ===== RESPONSIVE GRID ===== */
 @media (max-width: 1000px) {
   .game-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -152,5 +179,24 @@ h1, h2, h3, h4 {
 @media (max-width: 600px) {
   .game-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* optional: stack navbar items vertically on small screens */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+  }
+
+  .nav-search {
+    position: relative;
+    left: 0;
+    transform: none;
+    width: 100%;
+  }
+
+  .nav-links {
+    gap: 15px;
   }
 }
