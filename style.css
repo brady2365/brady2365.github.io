@@ -31,6 +31,13 @@ html, body {
     flex-wrap: wrap; /* allows responsiveness */
 }
 
+.my-img {
+    width: 300px;  /* change size */
+    height: auto;  /* keeps aspect ratio */
+    display: block;
+    margin: 0 auto; /* centers the image */
+}
+
 .nav-links {
     display: flex;
     gap: 12px;
