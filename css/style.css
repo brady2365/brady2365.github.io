@@ -25,7 +25,13 @@ body {
 .nav-links { ... }
 
 /* GAME GRID */
-.game-grid { ... }
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 per row */
+    gap: 20px;
+    justify-items: center;
+}
+
 .game-card { ... }
 .game-image {
     width: 200px;   /* controls width */
