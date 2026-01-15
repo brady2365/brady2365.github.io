@@ -6,6 +6,12 @@
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+
 body {
   background: black;
   color: lime;
