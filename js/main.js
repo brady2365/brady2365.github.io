@@ -1,5 +1,5 @@
 const games = [
-    { title: "Retro Bowl", url: "/games/retrobowl/index.html", image: "assets/retrobowl.png" },
+    { title: "Retro Bowl", url: "/games/retrobowl/index.html", image: "https://classroom2111.github.io/img/class-400.png" },
     { title: "Slope", url: "/games/slope.html", image: "assets/slope.png" },
     { title: "Stickman Hook", url: "/games/stickman.html", image: "assets/stickman.png" },
     // add more games here
