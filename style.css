@@ -1,6 +1,6 @@
 :root {
     --bg: #0a0a0a;        /* dark background */
-    --card-bg: #1a1a2e;   /* card background */
+    --card-bg: #0a0a0a;   /* card background */
     --accent: #00ff00;    /* lime highlight */
     --soft: #c0ff80;      /* light text */
     --muted: #555555;     /* separators */
