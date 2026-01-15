@@ -81,12 +81,24 @@ h1, h2, h3, h4 {
 }
 
 /* ===== GAME CARD ===== */
+/* Center + bold all text inside game cards */
 .game-card {
-  border: 2px solid lime;
-  border-radius: 14px;
-  overflow: hidden;
-  background: black;
-  box-shadow: 0 0 20px rgba(0,255,0,0.6);
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Make the bottom bar text centered too */
+.game-info {
+  justify-content: center;
+  gap: 15px; /* space between title + button */
+}
+
+/* Optional: make game titles pop more */
+.game-info span,
+.game-info div {
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px lime;
 }
 
 /* Iframe */
