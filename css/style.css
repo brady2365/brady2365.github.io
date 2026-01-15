@@ -22,7 +22,9 @@ body {
 .navbar { ... }
 .logo { ... }
 .nav-search { ... }
-.nav-links { ... }
+.nav-links {
+    color:lime;
+}
 
 /* GAME GRID */
 .game-grid {
