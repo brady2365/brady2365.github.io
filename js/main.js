@@ -1,7 +1,7 @@
 const games = [
     { title: "Retro Bowl", url: "/games/retrobowl/index.html", image: "https://classroom2111.github.io/img/class-400.png" },
-    { title: "Slope", url: "/games/slope.html", image: "assets/slope.png" },
-    { title: "Stickman Hook", url: "/games/stickman.html", image: "assets/stickman.png" },
+    { title: "Slope", url: "/games/slope/index.html", image: "https://classroom2111.github.io/img/class-450.png" },
+    { title: "Geometry Dash", url: "/games/geometrydash/index.html", image: "https://classroom2111.github.io/img/class-453.png" },
     // add more games here
 ];
 
