@@ -25,6 +25,16 @@ body {
 .nav-links { ... }
 
 /* GAME GRID */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 30px;                             /* space between cards */
+    justify-items: center;                 /* centers cards in their column */
+    margin: 20px 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
 .game-card {
     text-align: center;
 }
