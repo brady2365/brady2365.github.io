@@ -215,7 +215,7 @@ h1, h2, h3, h4 {
   /* Game Player Layout */
 .game-player {
   width: 100%;
-  height: calc(100vh - 120px); /* leaves room for navbar */
+  height: calc(100vh - 120px);
   margin: 10px auto;
   border: 2px solid lime;
   border-radius: 16px;
@@ -226,55 +226,50 @@ h1, h2, h3, h4 {
   flex-direction: column;
 }
 
-/* Header bar */
 .game-header {
-  flex-shrink: 0;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 14px 20px;
   border-bottom: 2px solid lime;
   background: #0f0f0f;
 }
 
-/* Iframe container */
+.game-name {
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 0 0 10px lime;
+}
+
+/* Fullscreen button */
+.fullscreen-btn {
+  background: black;
+  border: 2px solid lime;
+  color: lime;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px lime;
+}
+
+.fullscreen-btn:hover {
+  background: lime;
+  color: black;
+}
+
+/* Game container */
 .game-frame {
   flex-grow: 1;
   width: 100%;
 }
 
-/* Iframe */
+/* Game iframe */
 .game-frame iframe {
   width: 100%;
   height: 100%;
   border: none;
 }
 
-/* Game title (slightly left) */
-  .game-name {
-    font-size: 22px;
-    font-weight: bold;
-    text-shadow: 0 0 10px lime;
-  }
-
-/* Fullscreen button */
-  .fullscreen-btn {
-    background: black;
-    border: 2px solid lime;
-    color: lime;
-    font-size: 18px;
-    padding: 6px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 0 10px lime;
-  }
-
-  .fullscreen-btn:hover {
-    background: lime;
-    color: black;
-  }
-
-/* Iframe container */
 
   
 }
