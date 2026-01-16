@@ -7,7 +7,7 @@
 <body>
 
 <!-- NAVBAR -->
-<div class="navbar-wrap" id="navbarWrap">
+<div class="navbar-wrap">
   <div class="navbar">
     <div class="logo">Game Hub</div>
     <div class="nav-links">
@@ -17,36 +17,27 @@
   </div>
 </div>
 
-<!-- GAME CARD -->
 <div class="game-player">
 
-  <!-- Game info bar -->
-  <div class="game-header" id="gameHeader">
+  <div class="game-header">
     <div class="game-name">Retro Bowl</div>
     <button class="fullscreen-btn" onclick="toggleFullscreen()">⛶</button>
   </div>
 
-  <!-- Game iframe -->
   <div class="game-frame">
-    <iframe src="https://retrobowl.me" allowfullscreen></iframe>
+    <iframe id="gameFrame" src="https://retrobowl.me" allowfullscreen></iframe>
   </div>
 
 </div>
 
 <script>
 function toggleFullscreen() {
-  const player = document.querySelector(".game-player");
-  const navbar = document.getElementById("navbarWrap");
-  const header = document.getElementById("gameHeader");
+  const iframe = document.getElementById("gameFrame");
 
   if (!document.fullscreenElement) {
-    player.requestFullscreen();
-    navbar.style.display = "none";
-    header.style.display = "none";
+    iframe.requestFullscreen();
   } else {
     document.exitFullscreen();
-    navbar.style.display = "block";
-    header.style.display = "flex";
   }
 }
 </script>
