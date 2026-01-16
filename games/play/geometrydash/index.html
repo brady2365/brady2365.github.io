@@ -1,1 +1,55 @@
-<iframe src="https://geometrylitegame.org/game/geometry-dash-lite/" width="100%" height="100%"></iframe>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Retro Bowl</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar-wrap" id="navbarWrap">
+  <div class="navbar">
+    <div class="logo">Game Hub</div>
+    <div class="nav-links">
+      <a href="/games">Games</a>
+      <a href="/requests">Request</a>
+    </div>
+  </div>
+</div>
+
+<!-- GAME CARD -->
+<div class="game-player">
+
+  <!-- Game info bar -->
+  <div class="game-header" id="gameHeader">
+    <div class="game-name">Retro Bowl</div>
+    <button class="fullscreen-btn" onclick="toggleFullscreen()">⛶</button>
+  </div>
+
+  <!-- Game iframe -->
+  <div class="game-frame">
+    <iframe src="https://retrobowl.me" allowfullscreen></iframe>
+  </div>
+
+</div>
+
+<script>
+function toggleFullscreen() {
+  const player = document.querySelector(".game-player");
+  const navbar = document.getElementById("navbarWrap");
+  const header = document.getElementById("gameHeader");
+
+  if (!document.fullscreenElement) {
+    player.requestFullscreen();
+    navbar.style.display = "none";
+    header.style.display = "none";
+  } else {
+    document.exitFullscreen();
+    navbar.style.display = "block";
+    header.style.display = "flex";
+  }
+}
+</script>
+
+</body>
+</html>
