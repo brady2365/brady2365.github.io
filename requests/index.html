@@ -8,15 +8,28 @@
 </head>
 <body>
     
-    <div class="navbar">
-        <div class="nav-search">
-            <input type="text" id="searchInput" placeholder="Search games...">
-        </div>
-        <div class="nav-links">
-            <a href="/games">Games</a>
-            <a href="/requests">Request</a>
-        </div>
+  <!-- NAVBAR -->
+  <div class="navbar">
+
+    <div class="nav-left">
+      <div class="logo">Game Hub</div>
+      <a href="/requests" class="nav-requests">Requests</a>
     </div>
+
+    <div class="nav-search">
+      <input type="text" id="searchInput" placeholder="Search games...">
+    </div>
+
+    <div class="nav-right">
+      <div class="filters">
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="new">New</button>
+        <button data-filter="popular">Popular</button>
+        <button data-filter="underrated">Underrated</button>
+      </div>
+    </div>
+
+  </div>
 
     <h2 id="request" style="text-align:center; margin-top:40px;">Any requests for games to add?</h2>
         <div class="request-wrap">
