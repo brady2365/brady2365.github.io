@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Retro Bowl</title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-
-<!-- NAVBAR -->
-<div class="navbar-wrap">
+<div class="navbar-wrap" id="navbarWrap">
   <div class="navbar">
     <div class="logo">Game Hub</div>
     <div class="nav-links">
@@ -21,26 +12,15 @@
 
   <div class="game-header">
     <div class="game-name">Retro Bowl</div>
-    <button class="fullscreen-btn" onclick="toggleFullscreen()">⛶</button>
+    <button class="fullscreen-btn" id="fsBtn">⛶</button>
   </div>
 
-  <div class="game-frame">
-    <iframe id="gameFrame" src="https://retrobowl.me" allowfullscreen></iframe>
+  <div class="game-frame" id="gameFrameWrapper">
+    <iframe
+      id="gameFrame"
+      src="https://retrobowl.me"
+      allow="fullscreen"
+    ></iframe>
   </div>
 
 </div>
-
-<script>
-function toggleFullscreen() {
-  const iframe = document.getElementById("gameFrame");
-
-  if (!document.fullscreenElement) {
-    iframe.requestFullscreen();
-  } else {
-    document.exitFullscreen();
-  }
-}
-</script>
-
-</body>
-</html>
