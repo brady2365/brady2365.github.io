@@ -1,30 +1,38 @@
 const games = [
-    { title: "Retro Bowl", url: "/games/retrobowl/index.html", image: "https://classroom2111.github.io/img/class-400.png" },
-    { title: "Slope", url: "/games/slope/index.html", image: "https://classroom2111.github.io/img/class-450.png" },
-    { title: "Geometry Dash", url: "/games/play/geometrydash/index.html", image: "https://classroom2111.github.io/img/class-453.png" },
-    // add more games here
+  {
+    title: "Retro Bowl",
+    url: "/games/retrobowl/index.html",
+    tags: "popular"
+  },
+  {
+    title: "Geometry Dash",
+    url: "/games/gd/index.html",
+    tags: "popular underrated"
+  },
+  {
+    title: "Slope",
+    url: "/games/slope/index.html",
+    tags: "new"
+  },
+  {
+    title: "Random Game",
+    url: "/games/random/index.html",
+    tags: ""
+  }
 ];
 
-const container = document.getElementById('gameContainer');
+const container = document.getElementById("gameContainer");
 
-function escapeHtml(str) {
-    return str.replace(/&/g,'&amp;')
-              .replace(/</g,'&lt;')
-              .replace(/>/g,'&gt;')
-              .replace(/"/g,'&quot;');
-}
+games.forEach(game => {
+  const card = document.createElement("div");
+  card.className = "game-card";
+  card.dataset.tags = game.tags;
 
-function createCardHTML(g) {
-    return `
-        <div class="game-card" data-title="${escapeHtml(g.title)}">
-            <a href="${g.url}" class="game-link">
-                <div class="game-box">
-                    <img class="game-image" src="${g.image}" alt="${escapeHtml(g.title)}">
-                    <div class="game-title">${escapeHtml(g.title)}</div>
-                </div>
-            </a>
-        </div>
-    `;
-}
+  card.innerHTML = `
+    <a href="${game.url}" class="game-link">
+      <div class="game-title">${game.title}</div>
+    </a>
+  `;
 
-games.forEach(g => container.insertAdjacentHTML('beforeend', createCardHTML(g)));
+  container.appendChild(card);
+});
