@@ -235,28 +235,27 @@ h1, h2, h3, h4 {
 }
 
 /* ===== FILTERS ===== */
+/* Filters container */
 .filters-wrapper {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-wrap: wrap;
   color: lime;
 }
 
+/* Label "Games:" */
 .filters-label {
   font-weight: bold;
   text-shadow: 0 0 8px lime;
-  flex-shrink: 0;
 }
 
-/* filters container */
+/* Buttons container */
 .filters {
   display: flex;
   gap: 6px;
-  flex-wrap: wrap;
 }
 
-/* individual buttons */
+/* Filter buttons */
 .filters button {
   background: black;
   color: lime;
@@ -269,18 +268,17 @@ h1, h2, h3, h4 {
   transition: all 0.2s;
 }
 
-/* hover effect */
 .filters button:hover {
   background: lime;
   color: black;
   box-shadow: 0 0 15px rgba(0,255,0,0.9);
 }
 
-/* active filter */
 .filters button.active {
   background: lime;
   color: black;
 }
+
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1000px) {
