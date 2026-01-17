@@ -7,32 +7,24 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
-<div class="navbar">
-  <!-- Left side: Logo + Requests -->
-  <div class="nav-left">
+<div class="navbar-wrap">
+  <div class="navbar">
     <div class="logo">Game Hub</div>
-    <a href="/requests" class="request-link">Request</a>
-  </div>
-
-  <!-- Center: Search bar -->
-  <div class="nav-search">
-    <input type="text" id="searchInput" placeholder="Search games...">
-  </div>
-
-  <!-- Right side: Filters -->
-  <div class="nav-right">
+    <div class="nav-search">
+      <input type="text" id="searchInput" placeholder="Search games...">
+    </div>
     <div class="filters-wrapper">
       <span class="filters-label">Games:</span>
       <div class="filters">
-        <span class="filter active" data-filter="all">All</span>
-        <span class="filter" data-filter="new">New</span>
-        <span class="filter" data-filter="popular">Popular</span>
-        <span class="filter" data-filter="underrated">Underrated</span>
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="new">New</button>
+        <button data-filter="popular">Popular</button>
+        <button data-filter="underrated">Underrated</button>
       </div>
     </div>
   </div>
 </div>
+
 
   <!-- GAME GRID -->
   <div id="gameContainer" class="game-grid"></div>
