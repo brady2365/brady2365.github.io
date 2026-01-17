@@ -10,20 +10,30 @@
 <div class="navbar-wrap">
   <div class="navbar">
     <div class="logo">Game Hub</div>
+
+    <!-- Left side: Requests link -->
+    <div class="nav-links">
+      <a href="/requests">Request</a>
+    </div>
+
+    <!-- Center: Search bar -->
     <div class="nav-search">
       <input type="text" id="searchInput" placeholder="Search games...">
     </div>
+
+    <!-- Right side: Filters as clickable text -->
     <div class="filters-wrapper">
       <span class="filters-label">Games:</span>
       <div class="filters">
-        <button data-filter="all" class="active">All</button>
-        <button data-filter="new">New</button>
-        <button data-filter="popular">Popular</button>
-        <button data-filter="underrated">Underrated</button>
+        <span class="filter active" data-filter="all">All</span>
+        <span class="filter" data-filter="new">New</span>
+        <span class="filter" data-filter="popular">Popular</span>
+        <span class="filter" data-filter="underrated">Underrated</span>
       </div>
     </div>
   </div>
 </div>
+
 
 
   <!-- GAME GRID -->
