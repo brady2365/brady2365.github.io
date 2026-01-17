@@ -5,6 +5,41 @@
     <title>Request Page</title>
     <link rel="icon" href="assets/favicon.png">
     <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+          /* ===== REQUEST IFRAME ===== */
+          .requests-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            width: 100%;
+            min-height: calc(100vh - 100px); /* leaves space for navbar */
+            box-sizing: border-box;
+          }
+
+          .requests-iframe {
+            width: 80%;              /* almost full page width */
+            height: 80vh;            /* almost full page height */
+            border: 3px solid lime;  /* lime border */
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.6); /* subtle glow */
+            transition: 0.3s;
+          }
+
+          .requests-iframe:hover {
+            box-shadow: 0 0 30px lime; /* glow on hover */
+          }
+
+          /* Mobile responsive */
+          @media (max-width: 600px) {
+            .requests-iframe {
+              width: 95%;
+              height: 70vh;
+            }
+          }
+    </style>
+
 </head>
 <body>
     
@@ -20,7 +55,13 @@
   </div>
 
     <h2 id="request" style="text-align:center; margin-top:40px;">Any requests for games to add?</h2>
-        <div class="request-wrap">
-            <iframe src="https://forms.gle/krxNEueW7HhYcz2T6?embedded=true" width="40%" height="250" frameborder="0"></iframe>
+        <div class="requests-container">
+          <iframe 
+            src="YOUR_GOOGLE_FORM_LINK_HERE" 
+            class="requests-iframe" 
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
         </div>
+
 </body>
