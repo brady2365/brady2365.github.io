@@ -270,35 +270,50 @@ h1, h2, h3, h4 {
   border: none;
 }
 
-/* wrapper to keep label + buttons in one line */
+/* wrap everything in one line */
 .filters-wrapper {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap; /* allows it to wrap nicely on small screens */
   color: lime;
 }
 
-/* the "Games:" text */
+/* the "Games:" label */
 .filters-label {
   font-weight: bold;
   text-shadow: 0 0 8px lime;
+  flex-shrink: 0; /* ensures label doesn’t shrink */
 }
 
-/* buttons */
+/* buttons container */
+.filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap; /* buttons wrap on small screens */
+}
+
+/* individual buttons */
 .filters button {
-  background: black;
-  color: lime;
+  background: black !important;
+  color: lime !important;
   border: 2px solid lime;
   padding: 6px 12px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
   box-shadow: 0 0 8px rgba(0,255,0,0.6);
+  transition: 0.2s;
 }
 
+.filters button:hover {
+  box-shadow: 0 0 15px rgba(0,255,0,0.9);
+}
+
+/* active button */
 .filters button.active {
-  background: lime;
-  color: black;
+  background: lime !important;
+  color: black !important;
 }
 
 
