@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Retro Bowl | Game Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Main site CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
 <div class="navbar-wrap" id="navbarWrap">
   <div class="navbar">
     <div class="logo">Game Hub</div>
@@ -8,6 +22,7 @@
   </div>
 </div>
 
+<!-- ===== GAME PLAYER ===== -->
 <div class="game-player">
 
   <div class="game-header">
@@ -19,8 +34,36 @@
     <iframe
       id="gameFrame"
       src="https://retrobowl.me"
-      allow="fullscreen"
+      allow="fullscreen; gamepad"
     ></iframe>
   </div>
 
 </div>
+
+<!-- ===== SCRIPT ===== -->
+<script>
+  const frameWrapper = document.getElementById("gameFrameWrapper");
+  const navbar = document.getElementById("navbarWrap");
+  const fsBtn = document.getElementById("fsBtn");
+
+  function toggleFakeFullscreen() {
+    frameWrapper.classList.toggle("fake-fullscreen");
+    navbar.classList.toggle("hide-navbar");
+  }
+
+  // Button click
+  fsBtn.addEventListener("click", toggleFakeFullscreen);
+
+  // ESC exits fake fullscreen
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && frameWrapper.classList.contains("fake-fullscreen")) {
+      toggleFakeFullscreen();
+    }
+  });
+
+  // Double-click toggles
+  frameWrapper.addEventListener("dblclick", toggleFakeFullscreen);
+</script>
+
+</body>
+</html>
