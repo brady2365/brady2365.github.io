@@ -10,10 +10,14 @@ html, body {
   margin: 0;
   padding: 0;
   background: black;
+}
+
+body {
+  background: black;
   color: lime;
 }
 
-/* ===== LINKS ===== */
+/* Remove link underlines everywhere */
 a {
   text-decoration: none;
   color: lime;
@@ -21,15 +25,6 @@ a {
 
 a:hover {
   color: #b6ff00;
-  transition: 0.2s;
-}
-
-/* ===== NAVBAR WRAP (for Requests page) ===== */
-.navbar-wrap {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
 }
 
 /* ===== NAVBAR ===== */
@@ -38,45 +33,50 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding: 16px 40px;
-  border-radius: 15px;
+  margin: 10px;
   border-bottom: 2px solid lime;
+  border-radius: 15px;
   box-shadow: 0 0 20px rgba(0,255,0,0.6);
+  position: relative;
   background-color: #0f0f0f;
   max-width: 1200px;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar-wrap {
+  padding: 14px;
 }
 
 /* Logo */
 .logo {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
   color: lime;
+  font-family: 'Arial', sans-serif;
   text-shadow: 0 0 10px lime;
 }
 
-/* Nav Links (Games / Requests) */
+/* Links */
 .nav-links {
   display: flex;
   gap: 30px;
 }
 
 .nav-links a {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
   text-shadow: 0 0 8px lime;
-  padding: 6px 12px;
-  border-radius: 8px;
-  transition: all 0.2s;
 }
 
 .nav-links a:hover {
   color: #fff;
-  text-shadow: 0 0 15px lime;
   transform: scale(1.1);
+  transition: transform 0.2s, color 0.2s;
 }
 
-/* ===== SEARCH BAR (Games page) ===== */
+/* ===== SEARCH BAR ===== */
 .nav-search {
   flex: 1;
   display: flex;
@@ -84,7 +84,7 @@ a:hover {
 }
 
 .nav-search input {
-  width: 220px;
+  width: 200px;
   padding: 6px 15px;
   border: 2px solid lime;
   border-radius: 20px;
@@ -93,8 +93,8 @@ a:hover {
   font-weight: bold;
   font-size: 16px;
   outline: none;
-  text-shadow: 0 0 5px lime;
   transition: all 0.2s;
+  text-shadow: 0 0 5px lime;
 }
 
 .nav-search input::placeholder {
@@ -107,50 +107,31 @@ a:hover {
   background-color: #111;
 }
 
-/* ===== FILTERS (Games page) ===== */
-.filters-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  color: lime;
-  margin-top: 5px;
-}
-
-.filters-label {
-  font-weight: bold;
-  text-shadow: 0 0 8px lime;
-  flex-shrink: 0;
-}
-
-.filters {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.filters .filter {
-  color: lime;
-  cursor: pointer;
-  text-shadow: 0 0 8px lime;
-  font-weight: bold;
-  transition: 0.2s;
-}
-
-.filters .filter:hover {
-  color: #fff;
-  transform: scale(1.1);
-}
-
-.filters .filter.active {
-  color: #b6ff00;
-}
-
 /* ===== TITLES ===== */
 h1, h2, h3, h4 {
   text-align: center;
   margin: 25px 0;
   text-shadow: 0 0 12px lime;
+}
+
+/* ===== COUNTDOWN TIMER ===== */
+#timer {
+  font-size: 60px;
+  text-align: center;
+  margin-top: 20px;
+  text-shadow:
+    0 0 10px lime,
+    0 0 20px lime,
+    0 0 40px #00ff00;
+}
+
+/* ===== DIVIDER LINE ===== */
+.divider {
+  height: 2px;
+  width: 100%;
+  background: lime;
+  box-shadow: 0 0 10px lime;
+  margin: 30px 0;
 }
 
 /* ===== GAME GRID ===== */
@@ -175,14 +156,17 @@ h1, h2, h3, h4 {
   flex-direction: column;
 }
 
+/* make the image box taller without squishing */
 .game-box img.game-image {
   width: 100%;
   height: auto;
   object-fit: contain;
   display: block;
   border-bottom: 2px solid lime;
+  margin: 0 auto;
 }
 
+/* title box under the image */
 .game-title {
   padding: 12px 10px;
   background: black;
@@ -197,7 +181,7 @@ h1, h2, h3, h4 {
   text-decoration: none;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE GRID ===== */
 @media (max-width: 1000px) {
   .game-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -209,13 +193,18 @@ h1, h2, h3, h4 {
     grid-template-columns: 1fr;
   }
 
+  /* optional: stack navbar items vertically on small screens */
   .navbar {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    position: relative;
   }
 
   .nav-search {
+    position: relative;
+    left: 0;
+    transform: none;
     width: 100%;
   }
 
@@ -223,7 +212,107 @@ h1, h2, h3, h4 {
     gap: 15px;
   }
 
+  /* Game Player Layout */
+  .game-player {
+    width: 100%;
+    height: calc(100vh - 120px);
+    margin: 10px auto;
+    border: 2px solid lime;
+    border-radius: 16px;
+    box-shadow: 0 0 20px lime;
+    overflow: hidden;
+    background: black;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 2px solid lime;
+    background: #0f0f0f;
+  }
+
+  .game-name {
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 0 0 10px lime;
+  }
+
+  /* Fullscreen button */
+  .fullscreen-btn {
+    background: black;
+    border: 2px solid lime;
+    color: lime;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px lime;
+  }
+
+  .fullscreen-btn:hover {
+    background: lime;
+    color: black;
+  }
+
+  /* Game container */
+  .game-frame {
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  /* Game iframe */
+  .game-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* wrap everything in one line */
   .filters-wrapper {
-    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    color: lime;
+  }
+
+  /* the "Games:" label */
+  .filters-label {
+    font-weight: bold;
+    text-shadow: 0 0 8px lime;
+    flex-shrink: 0;
+  }
+
+  /* buttons container */
+  .filters {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  /* individual buttons */
+  .filters button {
+    background: black !important;
+    color: lime !important;
+    border: 2px solid lime;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 8px rgba(0,255,0,0.6);
+    transition: 0.2s;
+  }
+
+  .filters button:hover {
+    box-shadow: 0 0 15px rgba(0,255,0,0.9);
+  }
+
+  /* active button */
+  .filters button.active {
+    background: lime !important;
+    color: black !important;
   }
 }
