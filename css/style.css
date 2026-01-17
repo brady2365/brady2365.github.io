@@ -235,50 +235,47 @@ h1, h2, h3, h4 {
 }
 
 /* ===== FILTERS ===== */
-/* Filters container */
+/* Filters wrapper */
 .filters-wrapper {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
   color: lime;
 }
 
-/* Label "Games:" */
+/* "Games:" label */
 .filters-label {
   font-weight: bold;
   text-shadow: 0 0 8px lime;
 }
 
-/* Buttons container */
+/* Filters container */
 .filters {
   display: flex;
-  gap: 6px;
+  gap: 10px;
 }
 
-/* Filter buttons */
-.filters button {
-  background: black;
-  color: lime;
-  border: 2px solid lime;
-  padding: 6px 12px;
-  border-radius: 8px;
+/* Individual filter as text */
+.filters .filter {
   cursor: pointer;
   font-weight: bold;
-  box-shadow: 0 0 8px rgba(0,255,0,0.6);
-  transition: all 0.2s;
+  color: lime;
+  text-shadow: 0 0 5px lime;
+  transition: 0.2s;
 }
 
-.filters button:hover {
-  background: lime;
-  color: black;
-  box-shadow: 0 0 15px rgba(0,255,0,0.9);
+/* Hover effect: lighter text */
+.filters .filter:hover {
+  color: #b6ff00;
+  text-shadow: 0 0 10px lime;
 }
 
-.filters button.active {
-  background: lime;
-  color: black;
+/* Active filter */
+.filters .filter.active {
+  color: lime;
+  text-shadow: 0 0 12px lime;
 }
-
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1000px) {
