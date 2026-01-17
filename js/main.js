@@ -46,3 +46,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+const filterSpans = document.querySelectorAll('.filters .filter');
+
+filterSpans.forEach(span => {
+  span.addEventListener('click', () => {
+    filterSpans.forEach(s => s.classList.remove('active'));
+    span.classList.add('active');
+
+    const filter = span.dataset.filter;
+    showFilteredGames(filter);
+  });
+});
+
+function showFilteredGames(filter) {
+  console.log("Selected filter:", filter);
+  // your existing game filtering logic here
+}
