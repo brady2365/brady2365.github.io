@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   },
   {
     title: "Geometry Dash",
-    url: "/games/gd/index.html",
+    url: "/games/play/geometrydash/index.html",
     image: "/games/gd/icon.png",
     tags: "popular underrated"
   }
