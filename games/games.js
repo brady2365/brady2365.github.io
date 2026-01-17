@@ -1,26 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
   const games = [
-    {
-      title: "Retro Bowl",
-      url: "/games/retrobowl/index.html",
-      tags: "popular"
-    },
-    {
-      title: "Geometry Dash",
-      url: "/games/gd/index.html",
-      tags: "popular underrated"
-    },
-    {
-      title: "Slope",
-      url: "/games/slope/index.html",
-      tags: "new"
-    },
-    {
-      title: "Random Game",
-      url: "/games/random/index.html",
-      tags: ""
-    }
-  ];
+  {
+    title: "Retro Bowl",
+    url: "/games/retrobowl/index.html",
+    image: "/games/retrobowl/icon.png",
+    tags: "popular"
+  },
+  {
+    title: "Slope",
+    url: "/games/slope/index.html",
+    image: "/games/slope/icon.png",
+    tags: "new"
+  },
+  {
+    title: "Geometry Dash",
+    url: "/games/gd/index.html",
+    image: "/games/gd/icon.png",
+    tags: "popular underrated"
+  }
+];
 
   const container = document.getElementById("gameContainer");
   if (!container) {
@@ -35,6 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     card.innerHTML = `
       <a href="${game.url}" class="game-link">
+        <div class="game-box">
+          <img src="${game.image}" alt="${game.title}" class="game-image">
+        </div>
         <div class="game-title">${game.title}</div>
       </a>
     `;
