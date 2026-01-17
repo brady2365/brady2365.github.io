@@ -10,9 +10,6 @@ html, body {
   margin: 0;
   padding: 0;
   background: black;
-}
-
-body {
   color: lime;
 }
 
@@ -29,59 +26,53 @@ a:hover {
 /* ===== NAVBAR ===== */
 .navbar {
   display: flex;
-  align-items: center;           /* vertically center logo, search, links */
-  justify-content: space-between; /* logo left, links right */
-  padding: 16px 40px;            
-  margin: 10px auto;             /* separates navbar and centers it */
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
   border-bottom: 2px solid lime;
-  border-radius: 15px;           
-  box-shadow: 0 0 20px rgba(0,255,0,0.6);
-  position: relative;            
+  border-radius: 15px;
   background-color: #0f0f0f;
-  max-width: 1200px;             
+  box-shadow: 0 0 20px rgba(0,255,0,0.6);
+  max-width: 1200px;
+  margin: 10px auto;
 }
 
-.navbar-wrap {
-  padding: 14px;
+/* Left side: logo + request link */
+.nav-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* Logo */
 .logo {
   font-size: 24px;
   font-weight: bold;
   color: lime;
-  font-family: 'Arial', sans-serif;
   text-shadow: 0 0 10px lime;
 }
 
-/* Links */
-.nav-links {
-  display: flex;
-  gap: 30px;
-}
-
-.nav-links a {
-  font-size: 18px;
+.request-link {
+  color: lime;
   font-weight: bold;
-  text-transform: uppercase;
+  text-decoration: none;
   text-shadow: 0 0 8px lime;
 }
 
-.nav-links a:hover {
+.request-link:hover {
   color: #fff;
   transform: scale(1.1);
   transition: transform 0.2s, color 0.2s;
 }
 
-/* ===== SEARCH BAR ===== */
+/* Center search bar */
 .nav-search {
-  flex: 1;                       
+  flex: 1;
   display: flex;
-  justify-content: center;        
+  justify-content: center;
 }
 
 .nav-search input {
-  width: 200px;                   
+  width: 200px;
   padding: 6px 15px;
   border: 2px solid lime;
   border-radius: 20px;
@@ -90,8 +81,8 @@ a:hover {
   font-weight: bold;
   font-size: 16px;
   outline: none;
-  transition: all 0.2s;
   text-shadow: 0 0 5px lime;
+  transition: all 0.2s;
 }
 
 .nav-search input::placeholder {
@@ -102,6 +93,46 @@ a:hover {
   border-color: #fff;
   box-shadow: 0 0 12px lime;
   background-color: #111;
+}
+
+/* Right side: filters */
+.nav-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.filters-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filters-label {
+  font-weight: bold;
+  text-shadow: 0 0 8px lime;
+}
+
+.filters {
+  display: flex;
+  gap: 15px;
+}
+
+.filters .filter {
+  font-weight: bold;
+  color: lime;
+  cursor: pointer;
+  text-shadow: 0 0 8px lime;
+  transition: 0.2s;
+}
+
+.filters .filter:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.filters .filter.active {
+  color: #b6ff00;
 }
 
 /* ===== TITLES ===== */
@@ -153,17 +184,15 @@ h1, h2, h3, h4 {
   flex-direction: column;
 }
 
-/* Image in game card */
 .game-box img.game-image {
-  width: 100%;       
-  height: auto;      
-  object-fit: contain;  
+  width: 100%;
+  height: auto;
+  object-fit: contain;
   display: block;
   border-bottom: 2px solid lime;
-  margin: 0 auto;    
+  margin: 0 auto;
 }
 
-/* Game title under image */
 .game-title {
   padding: 12px 10px;
   background: black;
@@ -178,7 +207,7 @@ h1, h2, h3, h4 {
   text-decoration: none;
 }
 
-/* ===== GAME PLAYER ===== */
+/* ===== GAME PLAYER (iframe full screen box) ===== */
 .game-player {
   width: 100%;
   height: calc(100vh - 120px);
@@ -233,51 +262,6 @@ h1, h2, h3, h4 {
   border: none;
 }
 
-/* ===== FILTERS ===== */
-.filters-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  color: lime;
-}
-
-.filters-label {
-  font-weight: bold;
-  text-shadow: 0 0 8px lime;
-  flex-shrink: 0;
-}
-
-.filters {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.filters button {
-  all: unset; /* reset inherited styles */
-  display: inline-block;
-  background: black !important;
-  color: lime !important;
-  border: 2px solid lime !important;
-  padding: 6px 12px !important;
-  border-radius: 8px !important;
-  cursor: pointer !important;
-  font-weight: bold !important;
-  text-align: center !important;
-  box-shadow: 0 0 8px rgba(0,255,0,0.6) !important;
-  transition: 0.2s !important;
-}
-
-.filters button:hover {
-  box-shadow: 0 0 15px rgba(0,255,0,0.9) !important;
-}
-
-.filters button.active {
-  background: lime !important;
-  color: black !important;
-}
-
 /* ===== RESPONSIVE GRID & NAVBAR ===== */
 @media (max-width: 1000px) {
   .game-grid {
@@ -294,17 +278,18 @@ h1, h2, h3, h4 {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    position: relative;
   }
 
   .nav-search {
-    position: relative;
-    left: 0;
-    transform: none;
     width: 100%;
+    justify-content: flex-start;
   }
 
-  .nav-links {
-    gap: 15px;
+  .nav-right {
+    align-items: flex-start;
+  }
+
+  .filters {
+    gap: 10px;
   }
 }
