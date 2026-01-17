@@ -54,10 +54,11 @@ a:hover {
   text-shadow: 0 0 10px lime;
 }
 
-/* Links */
+/* push the Request link away from the logo */
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 30px; /* keeps multiple links spaced nicely */
+  margin-left: 40px; /* adds space between logo and request link */
 }
 
 .nav-links a {
