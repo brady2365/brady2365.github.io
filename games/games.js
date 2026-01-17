@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   {
     title: "Retro Bowl",
     url: "/games/retrobowl/index.html",
-    image: "/games/retrobowl/icon.png",
+    image: "https://classroom2111.github.io/img/class-400.png",
     tags: "popular"
   },
   {
