@@ -1,17 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchInput");
-  const filterSpans = document.querySelectorAll(".filters .filter");
+  const filterButtons = document.querySelectorAll(".filters button");
   const gameCards = document.querySelectorAll(".game-card");
 
   let activeFilter = "all";
 
-  // FILTER BUTTONS (span version)
-  filterSpans.forEach(span => {
-    span.addEventListener("click", () => {
-      activeFilter = span.dataset.filter;
+  // FILTER BUTTONS
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      activeFilter = btn.dataset.filter;
 
-      filterSpans.forEach(s => s.classList.remove("active"));
-      span.classList.add("active");
+      // Set active class
+      filterButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
 
       filterGames();
     });
@@ -21,8 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
   searchInput.addEventListener("input", () => {
     activeFilter = "all";
 
-    filterSpans.forEach(s => s.classList.remove("active"));
-    document.querySelector('.filters .filter[data-filter="all"]').classList.add("active");
+    // Set All button active
+    filterButtons.forEach(b => b.classList.remove("active"));
+    document.querySelector('.filters button[data-filter="all"]').classList.add("active");
 
     filterGames();
   });
@@ -33,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     gameCards.forEach(card => {
       const title = card.querySelector(".game-title")?.innerText.toLowerCase() || "";
-      const tags = card.dataset.tags || "";
+      const tags = card.dataset.tags.toLowerCase() || "";
 
       const matchesSearch = title.includes(searchText);
       const matchesFilter = activeFilter === "all" || tags.includes(activeFilter);
