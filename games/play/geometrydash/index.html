@@ -11,17 +11,18 @@
   <style>
     /* ===== GAME PLAYER ===== */
     .game-player {
-      width: 100%;
-      height: calc(100vh - 120px);
-      margin: 10px auto;
-      border: 2px solid lime;
-      border-radius: 16px;
-      box-shadow: 0 0 20px lime;
-      overflow: hidden;
-      background: black;
-      display: flex;
-      flex-direction: column;
-    }
+       width: 100%;
+       height: calc(100vh - 180px); /* was 120px */
+       max-height: 85vh;           /* cap height */
+       margin: 20px auto;
+       border: 2px solid lime;
+       border-radius: 16px;
+       box-shadow: 0 0 20px lime;
+       overflow: hidden;
+       background: black;
+       display: flex;
+       flex-direction: column;
+     }
 
     /* Header bar */
     .game-header {
