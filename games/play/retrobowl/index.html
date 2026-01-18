@@ -1,1 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Retro Bowl | Game Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Main site CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    /* ===== GAME PLAYER ===== */
+    .game-player {
+       width: 100%;
+       height: calc(100vh - 180px); /* was 120px */
+       max-height: 85vh;           /* cap height */
+       margin: 20px auto;
+       border: 2px solid lime;
+       border-radius: 16px;
+       box-shadow: 0 0 20px lime;
+       overflow: hidden;
+       background: black;
+       display: flex;
+       flex-direction: column;
+     }
+
+    /* Header bar */
+    .game-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border-bottom: 2px solid lime;
+      background: #0f0f0f;
+    }
+
+    .game-name {
+      font-size: 22px;
+      font-weight: bold;
+      text-shadow: 0 0 10px lime;
+    }
+
+    /* Fullscreen button */
+    .fullscreen-btn {
+      background: black;
+      border: 2px solid lime;
+      color: lime;
+      font-size: 18px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 10px lime;
+    }
+
+    .fullscreen-btn:hover {
+      background: lime;
+      color: black;
+    }
+
+    /* Iframe wrapper */
+    .game-frame {
+      flex: 1;
+      width: 100%;
+    }
+
+    .game-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ===== FAKE FULLSCREEN MODE ===== */
+    .fake-fullscreen {
+      position: fixed !important;
+      inset: 0;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 9999;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .hide-navbar {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<div class="navbar-wrap" id="navbarWrap">
+  <div class="navbar">
+    <div class="logo">Game Hub</div>
+    <div class="nav-links">
+      <a href="/games">Games</a>
+      <a href="/requests">Request</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== GAME PLAYER ===== -->
+<div class="game-player">
+
+  <div class="game-header">
+    <div class="game-name">Retro Bowl</div>
+    <button class="fullscreen-btn" id="fsBtn">⛶</button>
+  </div>
+
+  <div class="game-frame" id="gameFrameWrapper">
+    <iframe
+      id="gameFrame"
+      src="https://class1811.github.io/g5/class-400/"
+      allow="fullscreen; gamepad"
+    ></iframe>
+  </div>
+
+</div>
+
+<!-- ===== SCRIPT ===== -->
+<script>
+  const frameWrapper = document.getElementById("gameFrameWrapper");
+  const navbar = document.getElementById("navbarWrap");
+  const fsBtn = document.getElementById("fsBtn");
+
+  function toggleFakeFullscreen() {
+    frameWrapper.classList.toggle("fake-fullscreen");
+    navbar.classList.toggle("hide-navbar");
+  }
+
+  // Button click
+  fsBtn.addEventListener("click", toggleFakeFullscreen);
+
+  // ESC exits fake fullscreen
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && frameWrapper.classList.contains("fake-fullscreen")) {
+      toggleFakeFullscreen();
+    }
+  });
+
+  // Double-click toggles
+  frameWrapper.addEventListener("dblclick", toggleFakeFullscreen);
+</script>
+
+</body>
+</html>
