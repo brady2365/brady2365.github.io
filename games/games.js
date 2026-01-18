@@ -1,23 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const games = [
-    {
-      title: "Retro Bowl",
-      url: "/games/retrobowl/index.html",
-      image: "https://classroom2111.github.io/img/class-400.png",
-      tags: "popular"
-    },
-    {
-      title: "Slope",
-      url: "/games/slope/index.html",
-      image: "/games/slope/icon.png",
-      tags: "new"
-    },
-    {
-      title: "Geometry Dash",
-      url: "/games/play/geometrydash/index.html",
-      image: "/games/gd/icon.png",
-      tags: "popular underrated"
-    }
+    {title: "Geometry Dash", url: "/games/play/geometrydash/index.html", image: "https://classroom2111.github.io/img/class-453.png", tags: "popular"},
+    {title: "Retro Bowl", url: "/games/play/retrobowl/index.html", image: "https://classroom2111.github.io/img/class-400.png", tags: "popular"},
+    {title: "Slope", url: "/games/play/slope/index.html", image: "https://classroom2111.github.io/img/class-400.png", tags: "popular"},
+    
   ];
 
   const container = document.getElementById("gameContainer");
