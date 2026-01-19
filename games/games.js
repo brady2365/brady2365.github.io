@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {title: "Youtube", url: "/games/play/youtube/index.html", image: "https://city-png.b-cdn.net/preview/preview_public/temp/youtube-logo-yt-square-red-11717196163ympx8uzhdt.webp", tags: "popular"},
     {title: "Bitlife", url: "/games/play/bitlife/index.html", image: "https://classroom2111.github.io/img/class-441.png", tags: "popular"},
     {title: "Escape Road 1", url: "/games/play/escaperoad1/index.html", image: "https://escaperoad.io/data/image/options/escape-road-logo.jpg", tags: "popular"},
-    {title: "Escape Road 2", url: "/games/play/escaperoad2/index.html", image: "https://escaperoad.io/data/image/options/escape-road-logo.jpg", tags: "popular"},
+    {title: "Escape Road 2", url: "/games/play/escaperoad2/index.html", image: "https://imgs.crazygames.com/escape-road-2_1x1/20251121100622/escape-road-2_1x1-cover?format=auto&quality=100&metadata=none&width=1200", tags: "popular"},
     {title: "Crossy Road", url: "/games/play/crossyroad/index.html", image: "https://classroom2111.github.io/img/class-402.png", tags: "popular"},
     {title: "Ovo", url: "/games/play/ovo/index.html", image: "https://classroom2111.github.io/img/class-456.png", tags: "popular"},
     {title: "Arc", url: "/games/play/arc/index.html", image: "https://classroom2111.github.io/img/class-12.png", tags: "popular"},
