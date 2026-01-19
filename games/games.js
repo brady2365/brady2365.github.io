@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
     {title: "UltraKill", url: "/games/play/ultrakill/index.html", image: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8ef1af63-5387-4149-9fc7-91af014f7541/dfwf1br-3cbdfbd8-65bd-4a56-b4d1-6c26b7133f8c.png/v1/fit/w_512,h_512/ultrakill_dock_icon_by_usednoo25_dfwf1br-375w-2x.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6Ii9mLzhlZjFhZjYzLTUzODctNDE0OS05ZmM3LTkxYWYwMTRmNzU0MS9kZndmMWJyLTNjYmRmYmQ4LTY1YmQtNGE1Ni1iNGQxLTZjMjZiNzEzM2Y4Yy5wbmciLCJ3aWR0aCI6Ijw9NTEyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.fbsdfYgDBTwd6_W1Yl-pukbOV7Rfk9DG7tbGgG6S70M", tags: "underrated"},
     {title: "Spectrum", url: "/games/play/spectrum/index.html", image: "https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=204,height=204,fit=cover,f=auto/6cb069adc75fea6063429b590388701e/spectrum.png", tags: "underrated"},
     {title: "Chicken Merge", url: "/games/play/chickenmerge/index.html", image: "https://classroom2111.github.io/img/class-641.png", tags: "popular underrated"},
+    {title: "Infinite Craft", url: "/games/play/infinitecraft/index.html", image: "https://eaglercraftminecraft.github.io/rs/imgs/infinite-craft.png", tags: "popular"},
+    {title: "Minecraft", url: "/games/play/minecraft/index.html", image: "https://eaglercraftminecraft.github.io/rs/imgs/minecraft.jpeg", tags: "popular"},
     
   ];
 
