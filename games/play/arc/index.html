@@ -114,27 +114,49 @@
   const gamePlayer = document.getElementById("gamePlayer");
   const fsBtn = document.getElementById("fsBtn");
 
+  function enterFakeFullscreen() {
+    gamePlayer.classList.add("fake-fullscreen");
+  }
+
+  function exitFakeFullscreen() {
+    gamePlayer.classList.remove("fake-fullscreen");
+  }
+
   function toggleFakeFullscreen() {
     gamePlayer.classList.toggle("fake-fullscreen");
   }
 
-  // Button
+  // Button click
   fsBtn.addEventListener("click", toggleFakeFullscreen);
 
-  // ESC exits
+  // ESC key (only works when page has focus)
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && gamePlayer.classList.contains("fake-fullscreen")) {
-      gamePlayer.classList.remove("fake-fullscreen");
+      exitFakeFullscreen();
     }
   });
 
-  // Double-click exits
-  gamePlayer.addEventListener("dblclick", () => {
-    if (gamePlayer.classList.contains("fake-fullscreen")) {
-      gamePlayer.classList.remove("fake-fullscreen");
+  // 🔥 CLICK ANYWHERE OUTSIDE THE GAME EXITS
+  document.addEventListener("click", (e) => {
+    if (
+      gamePlayer.classList.contains("fake-fullscreen") &&
+      !gamePlayer.contains(e.target)
+    ) {
+      exitFakeFullscreen();
     }
   });
+
+  // 🔥 ALT+TAB / FOCUS LOSS EXITS
+  window.addEventListener("blur", () => {
+    if (gamePlayer.classList.contains("fake-fullscreen")) {
+      exitFakeFullscreen();
+    }
+  });
+
+  // Double-click toggles
+  gamePlayer.addEventListener("dblclick", toggleFakeFullscreen);
 </script>
+
 
 </body>
 </html>
