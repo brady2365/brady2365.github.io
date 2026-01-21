@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request Page</title>
+    <link rel="icon" href="assets/favicon.png">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+          /* ===== REQUEST IFRAME ===== */
+          .requests-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            width: 100%;
+            min-height: calc(100vh - 100px); /* leaves space for navbar */
+            box-sizing: border-box;
+          }
+
+          .requests-iframe {
+            width: 80%;              /* almost full page width */
+            height: 80vh;            /* almost full page height */
+            border: 3px solid lime;  /* lime border */
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.6); /* subtle glow */
+            transition: 0.3s;
+          }
+
+          .requests-iframe:hover {
+            box-shadow: 0 0 30px lime; /* glow on hover */
+          }
+
+          /* Mobile responsive */
+          @media (max-width: 600px) {
+            .requests-iframe {
+              width: 95%;
+              height: 70vh;
+            }
+          }
+
+          .navbar {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+          }
+
+          .nav-left,
+          .nav-right {
+              display: flex;
+              align-items: center;
+              gap: 16px;
+          }
+
+          .nav-link {
+              font-size: 18px;
+              font-weight: bold;
+              text-transform: uppercase;
+              text-shadow: 0 0 8px lime;
+              margin-left: 20px;
+          }
+        
+          .nav-label {
+              color: lime;
+              font-weight: bold;
+              text-shadow: 0 0 8px lime;
+          }
+          .request-link {
+              cursor: pointer;
+              font-weight: bold;
+              color: lime;
+              text-shadow: 0 0 5px lime;
+              transition: 0.2s;
+          }
+
+          /* Hover effect: lighter text */
+          .request-link:hover {
+              color: #b6ff00;
+              text-shadow: 0 0 10px lime;
+          }
+
+    </style>
+
+</head>
+<body>
+    
+  <!-- NAVBAR -->
+  <div class="navbar-wrap" id="navbarWrap">
+      <div class="navbar">
+
+        <!-- LEFT SIDE -->
+        <div class="nav-left">
+          <div class="logo">Game Hub</div>
+          <a href="/games" class="nav-link">Games</a>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="nav-right">
+          <span class="nav-label">Requests:</span>
+          <a class="request-link" href="/requests/games">Games</a>
+          <a class="request-link" href="/requests/reportbug">Report Bug</a>
+          <a class="request-link" href="/requests/feature">Feature</a>
+        </div>
+
+      </div>
+  </div>
+
+
+    <h2 id="request" style="text-align:center; margin-top:40px;">Any Requests for Features to Add?</h2>
+        <div class="requests-container">
+          <iframe 
+            src="https://forms.gle/T4kUARvJ95WTDXtr5" 
+            class="requests-iframe" 
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+</body>
