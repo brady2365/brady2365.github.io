@@ -56,6 +56,19 @@
               color: lime;
               font-weight: bold;
           }
+          .request-link {
+              cursor: pointer;
+              font-weight: bold;
+              color: lime;
+              text-shadow: 0 0 5px lime;
+              transition: 0.2s;
+          }
+
+          /* Hover effect: lighter text */
+          .request-link:hover {
+              color: #b6ff00;
+              text-shadow: 0 0 10px lime;
+          }
 
     </style>
 
@@ -75,9 +88,9 @@
         <!-- RIGHT SIDE -->
         <div class="nav-right">
           <span class="nav-label">Requests:</span>
-          <a href="/requests/games">games</a>
-          <a href="/requests/reportbug">report bug</a>
-          <a href="/requests/feature">feature</a>
+          <a class="request-link" href="/requests/games">games</a>
+          <a class="request-link" href="/requests/reportbug">report bug</a>
+          <a class="request-link" href="/requests/feature">feature</a>
         </div>
 
       </div>
