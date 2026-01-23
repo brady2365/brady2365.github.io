@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {title: "Geometry Dash: Meltdown", url: "/games/play/gdmeltdown/index.html", image: "https://play-lh.googleusercontent.com/o7hHBVIagQ_rylkmNuIx_sOEzaoAgRSHQhsfBM_C5MV3nJThWC_kkTYaBJJwTnfVc7I=s96-rw", tags: "new"},
     {title: "Geometry Dash: Other", url: "/games/play/gdother/index.html", image: "https://classroom2111.github.io/img/class-453.png", tags: "new"},
     {title: "Slice Master", url: "/games/play/slicemaster/index.html", image: "https://bitlifeonline.github.io/slice-master/logo.png", tags: "new popular"},
-    {title: "Soccer Skills World Cup", url: "/games/play/soccerskillsworldcup/index.html", image: "https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=80,height=80,fit=cover,f=auto/1a9642e779cab413962255ea953d1155/soccer-skills-world-cup.png", tags: "new popular"},
+    {title: "Soccer Skills World Cup", url: "/games/play/soccerskillsworldcup/index.html", image: "https://geometrydashspam.com/media/uploads/games/thumb/soccer-skills-world-cup.webp", tags: "new popular"},
     
     
   ];
