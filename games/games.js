@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {title: "Deer Adventrue", url: "/games/play/deeradventure/index.html", image: "https://deeradventure.io/cache/data/image/game/deer-adventure-m180x180.webp", tags: "new popular"},
     {title: "Steal a Brainrot Online", url: "/games/play/sabonline/index.html", image: "https://geodashlite.io/cache/data/image/game/steal-a-brainrot-unblocked-m330x330.jpg", tags: "new popular"},
     {title: "What Beats Rock", url: "/games/play/whatbeatsrock/index.html", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCEHSvKc8nQDT_F3UOYOmjq2xgj_llWRfUpyZMG78-4Ee5jRvrCgzuHqI&sg", tags: "new popular"},
-    
+    {title: "Getaway Shootout", url: "/games/play/getawayshootout/index.html", image: "https://footballlegends-online.github.io/img/class-479.png", tags: "new popular"},
     
   ];
 
