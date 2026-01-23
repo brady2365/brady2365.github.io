@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {title: "Waterworks", url: "/games/play/waterworks/index.html", image: "https://img.itch.zone/aW1nLzM4OTA2MTIuZ2lm/60x60%23c/mVU4ou.gif", tags: "new"},
     {title: "Geometry Dash: Meltdown", url: "/games/play/gdmeltdown/index.html", image: "https://play-lh.googleusercontent.com/o7hHBVIagQ_rylkmNuIx_sOEzaoAgRSHQhsfBM_C5MV3nJThWC_kkTYaBJJwTnfVc7I=s96-rw", tags: "new"},
     {title: "Geometry Dash: Other", url: "/games/play/gdother/index.html", image: "https://classroom2111.github.io/img/class-453.png", tags: "new"},
+    {title: "Slice Master", url: "/games/play/slicemaster/index.html", image: "https://bitlifeonline.github.io/slice-master/logo.png", tags: "new popular"},
     
     
   ];
