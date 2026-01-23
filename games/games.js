@@ -41,9 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
     {title: "Minecraft", url: "/games/play/minecraft/index.html", image: "https://eaglercraftminecraft.github.io/rs/imgs/minecraft.jpeg", tags: "popular"},
     {title: "Waterworks", url: "/games/play/waterworks/index.html", image: "https://img.itch.zone/aW1nLzM4OTA2MTIuZ2lm/60x60%23c/mVU4ou.gif", tags: "new"},
     {title: "Geometry Dash: Meltdown", url: "/games/play/gdmeltdown/index.html", image: "https://play-lh.googleusercontent.com/o7hHBVIagQ_rylkmNuIx_sOEzaoAgRSHQhsfBM_C5MV3nJThWC_kkTYaBJJwTnfVc7I=s96-rw", tags: "new"},
-    {title: "Geometry Dash: Other", url: "/games/play/gdother/index.html", image: "https://classroom2111.github.io/img/class-453.png", tags: "new"},
+    {title: "Geometry Dash: Other", url: "/games/play/gdother/index.html", image: "https://classroom2111.github.io/img/class-453.png", tags: "new popular"},
     {title: "Slice Master", url: "/games/play/slicemaster/index.html", image: "https://bitlifeonline.github.io/slice-master/logo.png", tags: "new popular"},
     {title: "Soccer Skills World Cup", url: "/games/play/soccerskillsworldcup/index.html", image: "https://geometrydashspam.com/media/uploads/games/thumb/soccer-skills-world-cup.webp", tags: "new popular"},
+    {title: "Deer Adventrue", url: "/games/play/deeradventure/index.html", image: "https://deeradventure.io/cache/data/image/game/deer-adventure-m180x180.webp", tags: "new popular"},
+    {title: "Steal a Brainrot Online", url: "/games/play/sabonline/index.html", image: "https://geodashlite.io/cache/data/image/game/steal-a-brainrot-unblocked-m330x330.jpg", tags: "new popular"},
     
     
   ];
