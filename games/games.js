@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {title: "Granny", url: "/games/play/granny/index.html", image: "https://cdn.jsdelivr.net/gh/gn-math/covers@main/90.png", tags: "new popular"},
     {title: "Lines of Battle", url: "/games/play/linesofbattle/index.html", image: "https://linesofbattle.net/img/logo.png", tags: "new popular"},
     {title: "Basketball Legends 2020", url: "/games/play/basketballlegends2020/index.html", image: "https://www.basketballlegends.fun/upload/imgs/basketball-legends.jpg", tags: "new popular"},
+    {title: "Chess", url: "/games/play/chess/index.html", image: "https://scout.wgimager.com/f_webp/w_420/q_90/https://chessunblock.github.io/img/master-chess.png", tags: "new popular"},
     
   ];
 
