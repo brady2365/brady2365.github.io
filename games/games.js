@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {title: "Plants Vs Zombies", url: "/games/play/plantsvszombies/index.html", image: "https://scout.wgimager.com/f_webp/w_420/q_90/https://plants-zombies.github.io/images/plants-zombies.png", tags: "new popular"},
     {title: "Amoung Us", url: "/games/play/amongus/index.html", image: "https://amongusonline.io//cache/data/image/game/1231-m200x200.png", tags: "new popular"},
     {title: "Granny", url: "/games/play/granny/index.html", image: "https://cdn.jsdelivr.net/gh/gn-math/covers@main/90.png", tags: "new popular"},
+    {title: "Lines of Battle", url: "/games/play/linesofbattle/index.html", image: "https://linesofbattle.net/img/logo.png", tags: "new popular"},
     
   ];
 
