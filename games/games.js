@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {title: "Amoung Us", url: "/games/play/amongus/index.html", image: "https://amongusonline.io//cache/data/image/game/1231-m200x200.png", tags: "new popular"},
     {title: "Granny", url: "/games/play/granny/index.html", image: "https://cdn.jsdelivr.net/gh/gn-math/covers@main/90.png", tags: "new popular"},
     {title: "Lines of Battle", url: "/games/play/linesofbattle/index.html", image: "https://linesofbattle.net/img/logo.png", tags: "new popular"},
+    {title: "Basketball Legends 2020", url: "/games/play/basketballlegends2020/index.html", image: "https://www.basketballlegends.fun/upload/imgs/basketball-legends.jpg", tags: "new popular"},
     
   ];
 
