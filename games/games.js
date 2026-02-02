@@ -50,11 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
     {title: "Plants Vs Zombies", url: "/games/play/plantsvszombies/index.html", image: "https://scout.wgimager.com/f_webp/w_420/q_90/https://plants-zombies.github.io/images/plants-zombies.png", tags: "new popular"},
     {title: "Amoung Us", url: "/games/play/amongus/index.html", image: "https://amongusonline.io//cache/data/image/game/1231-m200x200.png", tags: "new popular"},
     {title: "Granny", url: "/games/play/granny/index.html", image: "https://cdn.jsdelivr.net/gh/gn-math/covers@main/90.png", tags: "new popular"},
-    {title: "Lines of Battle", url: "/games/play/linesofbattle/index.html", image: "https://linesofbattle.net/img/logo.png", tags: "new popular"},
+    {title: "Lines of Battle", url: "/games/play/linesofbattle/index.html", image: "https://linesofbattle.net/img/logo.png", tags: "new"},
     {title: "Basketball Legends 2020", url: "/games/play/basketballlegends2020/index.html", image: "https://www.basketballlegends.fun/upload/imgs/basketball-legends.jpg", tags: "new popular"},
     {title: "Chess", url: "/games/play/chess/index.html", image: "https://scout.wgimager.com/f_webp/w_420/q_90/https://chessunblock.github.io/img/master-chess.png", tags: "new popular"},
     {title: "Rocket Goal", url: "/games/play/rocketgoal/index.html", image: "https://survival-race.io/cache/data/image/game/rocket-goal-f141x141.webp", tags: "new popular"},
-    {title: "House of Hazards", url: "/games/play/houseofhazards/index.html", image: "https://lnahtml.github.io/img/house-of-hazards.png", tags: "new popular"},
+    {title: "House of Hazards", url: "/games/play/houseofhazards/index.html", image: "https://lnahtml.github.io/img/house-of-hazards.png", tags: "new"},
+    {title: "Funny Shooter", url: "/games/play/funnyshooter/index.html", image: "https://img.gamedistribution.com/a1b7ac4025214a5cb0bd01a4f675513a-512x512.jpeg", tags: "new popular"},
+    {title: "Moto X3M", url: "/games/play/motox3m/index.html", image: "https://scout.wgimager.com/f_webp/w_420/q_90/https://funnyshooter.gitlab.io/img/class-458.png", tags: "new"},
   ];
 
   const container = document.getElementById("gameContainer");
