@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {title: "Basketball Legends 2020", url: "/games/play/basketballlegends2020/index.html", image: "https://www.basketballlegends.fun/upload/imgs/basketball-legends.jpg", tags: "new popular"},
     {title: "Chess", url: "/games/play/chess/index.html", image: "https://scout.wgimager.com/f_webp/w_420/q_90/https://chessunblock.github.io/img/master-chess.png", tags: "new popular"},
     {title: "Rocket Goal", url: "/games/play/rocketgoal/index.html", image: "https://survival-race.io/cache/data/image/game/rocket-goal-f141x141.webp", tags: "new popular"},
-    
+    {title: "House of Hazards", url: "/games/play/houseofhazards/index.html", image: "https://lnahtml.github.io/img/house-of-hazards.png", tags: "new popular"},
   ];
 
   const container = document.getElementById("gameContainer");
